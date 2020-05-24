@@ -1,0 +1,14 @@
+C:\Users\Arthur K1ng\Desktop\NetworkCoursework\Приложение\WahChat\WahChat\bin\Debug\WahChat.exe.config
+C:\Users\Arthur K1ng\Desktop\NetworkCoursework\Приложение\WahChat\WahChat\bin\Debug\WahChat.exe
+C:\Users\Arthur K1ng\Desktop\NetworkCoursework\Приложение\WahChat\WahChat\bin\Debug\WahChat.pdb
+C:\Users\Arthur K1ng\Desktop\NetworkCoursework\Приложение\WahChat\WahChat\obj\Debug\WahChat.csprojResolveAssemblyReference.cache
+C:\Users\Arthur K1ng\Desktop\NetworkCoursework\Приложение\WahChat\WahChat\obj\Debug\WahChat.Properties.Resources.resources
+C:\Users\Arthur K1ng\Desktop\NetworkCoursework\Приложение\WahChat\WahChat\obj\Debug\WahChat.csproj.GenerateResource.Cache
+C:\Users\Arthur K1ng\Desktop\NetworkCoursework\Приложение\WahChat\WahChat\obj\Debug\WahChat.exe
+C:\Users\Arthur K1ng\Desktop\NetworkCoursework\Приложение\WahChat\WahChat\obj\Debug\WahChat.pdb
+C:\Users\Arthur K1ng\Desktop\NetworkCoursework\Приложение\WahChat\WahChat\obj\Debug\WahChat.Setup.resources
+C:\Users\Arthur K1ng\Desktop\NetworkCoursework\Приложение\WahChat\WahChat\bin\Debug\dje-NE\WahChat.resources.dll
+C:\Users\Arthur K1ng\Desktop\NetworkCoursework\Приложение\WahChat\WahChat\obj\Debug\WahChat.Setup.dje-NE.resources
+C:\Users\Arthur K1ng\Desktop\NetworkCoursework\Приложение\WahChat\WahChat\obj\Debug\dje-NE\WahChat.resources.dll
+C:\Users\Arthur K1ng\Desktop\NetworkCoursework\Приложение\WahChat\WahChat\obj\Debug\WahChat.Login.resources
+C:\Users\Arthur K1ng\Desktop\NetworkCoursework\Приложение\WahChat\WahChat\obj\Debug\WahChat.Chat.resources
