@@ -45,11 +45,12 @@ namespace WahChat
                 }
 
                 // Стартуем соединение.
-                NetworkService.GetSharedService().CreateConnection(incomePort, outcomePort, checkBox.Checked);
+                NetworkService.GetSharedService().CreateConnection(incomePort, outcomePort);
 
                 this.Hide();
 
                 Login loginForm = new Login();
+                loginForm.StartPosition = FormStartPosition.CenterParent;
                 loginForm.Show();
             }
             else

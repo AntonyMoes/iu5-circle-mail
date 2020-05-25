@@ -15,10 +15,11 @@ namespace WahChat
         public Label notificationLabel;
         public Button connectButton;
         public ListBox chatBox;
+        public string userDirectory;
 
         private NetworkService()
         {
-            // ..
+            // ...
         }
 
         private static readonly NetworkService _sharedService = new NetworkService();
@@ -37,9 +38,9 @@ namespace WahChat
         /// <summary>
         /// Создание соединения
         /// </summary>
-        public void CreateConnection(string incomePortName, string outcomePortName, bool isMaster)
+        public void CreateConnection(string incomePortName, string outcomePortName)
         {
-            this.currentConnection = new Connection(incomePortName, outcomePortName, isMaster);
+            this.currentConnection = new Connection(incomePortName, outcomePortName);
 
             // формирование LINK кадра..
             // отправка LINK кадра..
@@ -99,16 +100,23 @@ namespace WahChat
 
                 case Frame.Type.Data:
 
-                    this.chatBox.Invoke((MethodInvoker)delegate {
+                    if (currentSession.username == frame.authorID && currentSession.username != frame.recipientID)
+                    {
+                        MessageBox.Show("Несуществующий пользователь", "Ошибка");
+                        break;
+                    }
 
-                        // Running on the UI thread
-                        this.chatBox.Items.Add(string.Format("{0} ({1}) {2}", DateTime.Now.ToString("hh:mm"), frame.authorID, frame.message));
-                    });
-
-                    // Если станция не ялвяется отправителем, то отправляем дальше
-                    if (currentSession.username != frame.authorID)
+                    // Если станция не ялвяется отправителем или получателем, то отправляем дальше
+                    if (currentSession.username != frame.recipientID)
                     {
                         this.SendFrame(frame);
+                    } else
+                    {
+                        this.chatBox.Items.Add(string.Format("{0}: {1}", frame.authorID, frame.message));
+                        int filesCount = Directory.GetFiles(NetworkService.GetSharedService().userDirectory).Length;
+                        string filePath = String.Format("{0}/{1}.txt", NetworkService.GetSharedService().userDirectory, filesCount + 1);
+                        //File.Create(filePath);
+                        File.WriteAllText(filePath, string.Format("{0}\n{1}", frame.authorID, frame.message));
                     }
 
                     break;
@@ -142,7 +150,7 @@ namespace WahChat
             this.currentConnection.SendBytes(frame.data);
         }
 
-        public void SendMessage(string message)
+        public void SendMessage(int recipientID, string message)
         {
             byte[] byteStr = System.Text.Encoding.UTF8.GetBytes(message);
 
@@ -150,6 +158,7 @@ namespace WahChat
 
             data.Add((byte)Frame.Type.Data);
             data.Add((byte)currentSession.username);
+            data.Add((byte)recipientID);
 
             foreach (byte b in byteStr)
             {

@@ -44,6 +44,7 @@ namespace WahChat
             this.Hide();
 
             Chat chatForm = new Chat();
+            chatForm.StartPosition = FormStartPosition.CenterParent;
             chatForm.Show();
         }
     }

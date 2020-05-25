@@ -34,55 +34,49 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.connectButton = new System.Windows.Forms.Button();
-            this.checkBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // incomePortBox
             // 
-            this.incomePortBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(112)))), ((int)(((byte)(129)))));
+            this.incomePortBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             resources.ApplyResources(this.incomePortBox, "incomePortBox");
-            this.incomePortBox.ForeColor = System.Drawing.Color.White;
+            this.incomePortBox.ForeColor = System.Drawing.Color.DimGray;
             this.incomePortBox.FormattingEnabled = true;
             this.incomePortBox.Name = "incomePortBox";
             // 
             // outcomePortBox
             // 
-            this.outcomePortBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(112)))), ((int)(((byte)(129)))));
+            this.outcomePortBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             resources.ApplyResources(this.outcomePortBox, "outcomePortBox");
-            this.outcomePortBox.ForeColor = System.Drawing.Color.White;
+            this.outcomePortBox.ForeColor = System.Drawing.Color.DimGray;
             this.outcomePortBox.FormattingEnabled = true;
             this.outcomePortBox.Name = "outcomePortBox";
             // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Name = "label1";
             // 
             // label2
             // 
             resources.ApplyResources(this.label2, "label2");
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Name = "label2";
             // 
             // connectButton
             // 
-            this.connectButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(112)))), ((int)(((byte)(129)))));
+            this.connectButton.BackColor = System.Drawing.Color.Teal;
             resources.ApplyResources(this.connectButton, "connectButton");
             this.connectButton.Name = "connectButton";
             this.connectButton.UseVisualStyleBackColor = false;
             this.connectButton.Click += new System.EventHandler(this.connectButton_Click);
             // 
-            // checkBox
-            // 
-            resources.ApplyResources(this.checkBox, "checkBox");
-            this.checkBox.Name = "checkBox";
-            this.checkBox.UseVisualStyleBackColor = true;
-            // 
             // Setup
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(35)))), ((int)(((byte)(51)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             resources.ApplyResources(this, "$this");
-            this.Controls.Add(this.checkBox);
             this.Controls.Add(this.connectButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -104,7 +98,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button connectButton;
-        private System.Windows.Forms.CheckBox checkBox;
     }
 }
 

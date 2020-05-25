@@ -21,9 +21,9 @@ namespace WahChat
 
         private List<byte> bytesBuffer = new List<byte>();
 
-        public Connection(string incomePortName, string outcomePortName, bool isMaster)
+        public Connection(string incomePortName, string outcomePortName)
         {
-            this.isPortsOpened = OpenPorts(incomePortName, outcomePortName, isMaster);
+            this.isPortsOpened = OpenPorts(incomePortName, outcomePortName);
 
             // ..
         }
@@ -31,19 +31,19 @@ namespace WahChat
         /// <summary>
         /// Открытие портов
         /// </summary>
-        private bool OpenPorts(string incomePortName, string outcomePortName, bool isMaster)
+        private bool OpenPorts(string incomePortName, string outcomePortName)
         {
             // Создаем объекты портов.
             this.incomePort = new SerialPort(incomePortName);
             this.outcomePort = new SerialPort(outcomePortName);
 
-            this.isMaster = isMaster;
+            this.isMaster = false;
 
             // Настраиваем порты.
             this.incomePort.Parity = Parity.Even;
             this.incomePort.Handshake = Handshake.RequestToSend;
             this.incomePort.BaudRate = 9600;
-            //this.incomePort.ReadBufferSize = 4 * 1024; // TODO: Надо пересчитать размер буфера.
+            // this.incomePort.ReadBufferSize = 4 * 1024; // TODO: Надо пересчитать размер буфера.
             this.incomePort.DataReceived += new SerialDataReceivedEventHandler(RecieveBytes);
 
             this.outcomePort.Parity = Parity.Even;

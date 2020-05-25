@@ -29,6 +29,7 @@ namespace WahChat
         public List<byte> data;
 
         public int authorID;
+        public int recipientID;
         public string message;
 
         public Frame()
@@ -54,13 +55,14 @@ namespace WahChat
                 case (byte)Type.Data:
                     this.type = Type.Data;
                     this.authorID = (int)data[1];
+                    this.recipientID = (int)data[2];
 
                     byte[] byteArray = data.ToArray();
 
-                    int messageLength = data.Count - 2;
+                    int messageLength = data.Count - 3;
                     byte[] messageData = new byte[messageLength];
 
-                    Array.Copy(byteArray, 2, messageData, 0, messageLength);
+                    Array.Copy(byteArray, 3, messageData, 0, messageLength);
 
                     this.message = System.Text.Encoding.UTF8.GetString(messageData, 0, messageData.Length);
 
