@@ -1,6 +1,6 @@
 ﻿namespace CircleMail
 {
-    partial class Chat
+    partial class Mail
     {
         /// <summary>
         /// Required designer variable.
@@ -160,7 +160,7 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // Chat
+            // Mail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -177,7 +177,7 @@
             this.Controls.Add(this.SendButton);
             this.Controls.Add(this.letterTextBox);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Chat";
+            this.Name = "Mail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Почта";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Chat_FormClosed);

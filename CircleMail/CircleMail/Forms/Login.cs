@@ -43,7 +43,7 @@ namespace CircleMail
 
             this.Hide();
 
-            Chat chatForm = new Chat();
+            Mail chatForm = new Mail();
             chatForm.StartPosition = FormStartPosition.CenterParent;
             chatForm.Show();
         }

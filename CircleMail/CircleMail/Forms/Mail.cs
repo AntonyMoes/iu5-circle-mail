@@ -11,9 +11,9 @@ using System.IO;
 
 namespace CircleMail
 {
-    public partial class Chat : Form
+    public partial class Mail : Form
     {
-        public Chat()
+        public Mail()
         {
             InitializeComponent();
 
