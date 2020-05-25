@@ -45,7 +45,7 @@ namespace CircleMail
                 }
 
                 // Стартуем соединение.
-                NetworkService.GetSharedService().CreateConnection(incomePort, outcomePort);
+                NetworkService.GetSharedService().CreateConnection(incomePort, outcomePort, checkBox1.Checked);
 
                 this.Hide();
 

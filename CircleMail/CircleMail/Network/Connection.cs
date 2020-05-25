@@ -21,9 +21,9 @@ namespace CircleMail
 
         private List<byte> bytesBuffer = new List<byte>();
 
-        public Connection(string incomePortName, string outcomePortName)
+        public Connection(string incomePortName, string outcomePortName, bool isMaster)
         {
-            this.isPortsOpened = OpenPorts(incomePortName, outcomePortName);
+            this.isPortsOpened = OpenPorts(incomePortName, outcomePortName, isMaster);
 
             // ..
         }
@@ -31,13 +31,13 @@ namespace CircleMail
         /// <summary>
         /// Открытие портов
         /// </summary>
-        private bool OpenPorts(string incomePortName, string outcomePortName)
+        private bool OpenPorts(string incomePortName, string outcomePortName, bool isMaster)
         {
             // Создаем объекты портов.
             this.incomePort = new SerialPort(incomePortName);
             this.outcomePort = new SerialPort(outcomePortName);
 
-            this.isMaster = false;
+            this.isMaster = isMaster;
 
             // Настраиваем порты.
             this.incomePort.Parity = Parity.Even;

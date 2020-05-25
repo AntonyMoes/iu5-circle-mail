@@ -17,10 +17,10 @@ namespace CircleMail
         {
             InitializeComponent();
 
-            NetworkService.GetSharedService().chatBox = this.chatBox;
+            NetworkService.GetSharedService().mailBox = this.chatBox;
 
             this.usernameLabel.Text = String.Format("Пользователь \"{0}\"", NetworkService.GetSharedService().currentSession.username);
-            // this.chatBox.SelectionMode = SelectionMode.None;
+            // this.mailBox.SelectionMode = SelectionMode.None;
 
             string appDirectory = String.Format("c:/Users/{0}/AppData/CircleMail", Environment.UserName);
             if (!Directory.Exists(appDirectory))
@@ -45,6 +45,12 @@ namespace CircleMail
 
         private void SendButton_Click(object sender, EventArgs e)
         {
+            if (letterAuthorBox.Text == "")
+            {
+                MessageBox.Show("Выберите письмо", "Ошибка");
+                return;
+            }
+
             this.Hide();
 
             CreateLetter createLetterForm = new CreateLetter(letterAuthorBox.Text, letterAuthorBox.Text, "", letterTextBox.Text);
@@ -85,6 +91,12 @@ namespace CircleMail
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (letterAuthorBox.Text == "")
+            {
+                MessageBox.Show("Выберите письмо", "Ошибка");
+                return;
+            }
+
             this.Hide();
 
             CreateLetter createLetterForm = new CreateLetter("", letterAuthorBox.Text, NetworkService.GetSharedService().currentSession.username.ToString(), letterTextBox.Text);

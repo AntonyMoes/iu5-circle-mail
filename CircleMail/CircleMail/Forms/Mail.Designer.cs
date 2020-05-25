@@ -79,7 +79,7 @@
             this.closeButton.UseVisualStyleBackColor = false;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
-            // chatBox
+            // mailBox
             // 
             this.chatBox.BackColor = System.Drawing.Color.Silver;
             this.chatBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -88,7 +88,7 @@
             this.chatBox.ItemHeight = 22;
             this.chatBox.Location = new System.Drawing.Point(11, 52);
             this.chatBox.Margin = new System.Windows.Forms.Padding(2);
-            this.chatBox.Name = "chatBox";
+            this.chatBox.Name = "mailBox";
             this.chatBox.Size = new System.Drawing.Size(284, 378);
             this.chatBox.TabIndex = 14;
             this.chatBox.SelectedIndexChanged += new System.EventHandler(this.chatBox_SelectedIndexChanged);

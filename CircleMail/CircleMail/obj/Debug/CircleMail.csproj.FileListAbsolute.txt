@@ -17,7 +17,6 @@ C:\Studies\6 sem\Seti\circle_mail\CircleMail\CircleMail\bin\Debug\CircleMail.exe
 C:\Studies\6 sem\Seti\circle_mail\CircleMail\CircleMail\bin\Debug\CircleMail.exe
 C:\Studies\6 sem\Seti\circle_mail\CircleMail\CircleMail\bin\Debug\CircleMail.pdb
 C:\Studies\6 sem\Seti\circle_mail\CircleMail\CircleMail\bin\Debug\dje-NE\CircleMail.resources.dll
-C:\Studies\6 sem\Seti\circle_mail\CircleMail\CircleMail\obj\Debug\CircleMail.csprojAssemblyReference.cache
 C:\Studies\6 sem\Seti\circle_mail\CircleMail\CircleMail\obj\Debug\CircleMail.CreateLetter.resources
 C:\Studies\6 sem\Seti\circle_mail\CircleMail\CircleMail\obj\Debug\CircleMail.Login.resources
 C:\Studies\6 sem\Seti\circle_mail\CircleMail\CircleMail\obj\Debug\CircleMail.Setup.resources

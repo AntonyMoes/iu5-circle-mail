@@ -55,7 +55,18 @@ namespace CircleMail
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (letterRecipientBox.Text == "")
+            {
+                MessageBox.Show("Введите получателя письма", "Ошибка");
+                return;
+            }
             int recipient = int.Parse(letterRecipientBox.Text);
+
+            if (letterTextBox.Text == "")
+            {
+                MessageBox.Show("Письмо не должно быть пустым", "Ошибка");
+                return;
+            }
             string text = letterTextBox.Text;
             NetworkService.GetSharedService().SendMessage(recipient, text);
 

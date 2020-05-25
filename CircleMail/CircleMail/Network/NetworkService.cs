@@ -14,7 +14,7 @@ namespace CircleMail
     {
         public Label notificationLabel;
         public Button connectButton;
-        public ListBox chatBox;
+        public ListBox mailBox;
         public string userDirectory;
 
         private NetworkService()
@@ -38,9 +38,9 @@ namespace CircleMail
         /// <summary>
         /// Создание соединения
         /// </summary>
-        public void CreateConnection(string incomePortName, string outcomePortName)
+        public void CreateConnection(string incomePortName, string outcomePortName, bool isMaster)
         {
-            this.currentConnection = new Connection(incomePortName, outcomePortName);
+            this.currentConnection = new Connection(incomePortName, outcomePortName, isMaster);
 
             // формирование LINK кадра..
             // отправка LINK кадра..
@@ -106,13 +106,13 @@ namespace CircleMail
                         break;
                     }
 
-                    // Если станция не ялвяется отправителем или получателем, то отправляем дальше
+                    // Если станция не ялвяется получателем, то отправляем дальше
                     if (currentSession.username != frame.recipientID)
                     {
                         this.SendFrame(frame);
                     } else
                     {
-                        this.chatBox.Items.Add(string.Format("{0}: {1}", frame.authorID, frame.message));
+                        this.mailBox.Items.Add(string.Format("{0}: {1}", frame.authorID, frame.message));
                         int filesCount = Directory.GetFiles(NetworkService.GetSharedService().userDirectory).Length;
                         string filePath = String.Format("{0}/{1}.txt", NetworkService.GetSharedService().userDirectory, filesCount + 1);
                         //File.Create(filePath);
